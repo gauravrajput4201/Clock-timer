@@ -1,0 +1,111 @@
+
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Text:ital,wght@0,700;1,700&display=swap");
+
+
+@import "./components/Clock.scss";
+@import "./components/Timer.scss";
+@import "./components/TimerContainer.scss";
+
+:root {
+    --color-grayish-blue: #8486a9;
+    --color-soft-red: #fb6087;
+
+    --color-white: #ffffff;
+    --color-dark-desaturated-blue: #343650;
+    --color-very-dark-blue: #1e1f29;
+    --color-very-dark-mostly-black-blue: #191a24;
+
+    --color-icons: #8385a9;
+
+    --color-bg-bottom: #261e2f;
+
+    --font-size-normal: 62.5%;
+    --font-size-small: 50%;
+    --font-family: "Red Hat Text", sans-serif;
+    --font-weight: 700;
+
+    --bp-largest: 62.5em; // 1000px
+    --bp-large: 50em; // 800px
+    --bp-medium: 37.5em; // 600px
+    --bp-small: 31.25em; // 500px
+    --bp-smaller: 25em; // 400px
+}
+
+
+*,
+*::after,
+*::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+}
+
+html {
+    font-size: var(--font-size-normal);
+    box-sizing: border-box;
+
+    @media only screen and (max-width: 62.5em) {
+        font-size: var(--font-size-small);
+    }
+
+    @media only screen and (max-width: 37.5em) {
+        font-size: var(--font-size-normal);
+    }
+
+    @media only screen and (max-width: 31.25em) {
+        font-size: var(--font-size-small);
+    }
+}
+
+body {
+    background: url("./assets/bg-stars.svg"),
+        linear-gradient(var(--color-very-dark-mostly-black-blue),
+            var(--color-bg-bottom) 60%);
+
+    font-family: var(--font-family);
+
+    width: 100vw;
+    height: 100vh;
+}
+
+#root {
+    width: 100%;
+    height: 100%;
+}
+// .container__tools{
+//     background: url("./assets/pattern-hills.svg"),
+//             linear-gradient(var(--color-very-dark-mostly-black-blue),
+//                 var(--color-bg-bottom) 60%);
+// }
+
+.container {
+    width: 100%;
+    height: 100%;
+
+    display: grid;
+    grid-template-rows: 1fr 20rem;
+}
+
+@keyframes starsRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/* background: var(--color-grayish-blue); */
+/* background: var(--color-dark-desaturated-blue); */
+/* background: var(--color-very-dark-blue); */
+/* background: var(--color-very-dark-mostly-black-blue); */
+
+/* background: radial-gradient(
+    circle at 50% 100%,
+    var(--color-bg-bottom) 20%,
+    var(--color-very-dark-mostly-black-blue)
+  ); */
+/* background: url("../public/pattern-hills.svg"); */
+/* background: url("../public/bg-stars.svg"); */
+/* background: url("../public/bg-stars.svg"); */
